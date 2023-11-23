@@ -4,13 +4,15 @@
         <label for="name">
             <input type="text" id="name" v-model="username" placeholder="name">
         </label>
+        <br>
         <label for="text">
-            <input type="text" id="email" placeholder="email" v-model="email">
+            <input type="email" id="email" placeholder="email" v-model="email">
         </label>
+        <br>
         <label for="password">
             <input v-model="password" @keyup="valtozas" type="password" placeholder="password" id="password">
-            {{ password }}
         </label>
+        <br>
         <label for="password-repeat">
             <input type="text" v-model="password_repeat" placeholder="password-repeat" id="password-repeat">
         </label>
@@ -37,7 +39,8 @@ import { ref } from 'vue';
     }
 
     const signup = () => {
-        if(email.value == "" || username.value == ""){
+
+        if(email.value === "" || username.value === ""){
             alert("minden adatot ki kell tölteni")
             return
         }
@@ -47,7 +50,7 @@ import { ref } from 'vue';
             alert("nem ugyanaz a jelszot adta meg")
             return
         }
-
+        alert("siker")
     }
 
 
